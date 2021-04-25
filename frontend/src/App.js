@@ -1,6 +1,11 @@
+import Home from './components/Home'
 function App() {
+
   return (
-    <h1>Hello from App</h1>
+  <div className='app'>
+    
+    <Home />
+  </div>
   );
 }
 
