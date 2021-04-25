@@ -7,6 +7,10 @@ router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter);
 
+// POST /api/test
+ router.post('/test', function(req, res) {
+    res.json({ requestBody: req.body });
+});
 module.exports = router;
 
 
@@ -33,13 +37,13 @@ module.exports = router;
 // const { User } = require('../../db/models');
 
 
-// router.post('/test', function(req, res) {
-//     res.json({ requestBody: req.body });
-// });
+
 
 // // GET /api/set-token-cookie
 // // Testing User Auth Middleware
-// //
+// /// router.post('/test', function(req, res) {
+//     res.json({ requestBody: req.body });
+// });
 // const asyncHandler = require('express-async-handler');
 // const { setTokenCookie } = require('../../utils/auth.js');
 // const { User } = require('../../db/models');
