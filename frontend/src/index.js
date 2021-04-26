@@ -1,12 +1,21 @@
+// frontend/src/index.js
 import React from 'react';
-import ReactDOM from 'react-dom';
+
 import './index.css';
+
+import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import configureStore from './store';
 import App from './App';
-import * as sessionActions from './store/session';
+
+import configureStore from './store';
+
+
 const store = configureStore();
+
+if (process.env.NODE_ENV !== 'production') {
+  window.store = store;
+}
 
 function Root() {
   return (
