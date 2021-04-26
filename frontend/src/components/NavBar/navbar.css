@@ -12,7 +12,7 @@
 .navbar__icon {
   object-fit: contain;
   margin-left: 20px;
-  height: 100px;
+  height: 75px;
 }
 
 .navbar__right {
@@ -24,7 +24,7 @@
 .form-button {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
-  font-size: 2.5vh;
+  font-size: 2vh;
   color: black;
   text-decoration: none;
   margin-right: 30px;
