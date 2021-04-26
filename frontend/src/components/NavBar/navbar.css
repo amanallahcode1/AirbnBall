@@ -29,8 +29,13 @@
   margin-right: 30px;
   background: none;
   border: none;
+  padding: 20px 15px;
+  transition-property: "border-radius";
+  transition-delay: 0.15s;
+  transition-duration: 1s;
 }
 .form-button:hover {
   cursor: pointer;
-  text-decoration: underline;
+  background-color: rgb(202, 187, 187);
+  border-radius: 15px;
 }
