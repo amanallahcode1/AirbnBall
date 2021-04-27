@@ -69,7 +69,7 @@ input {
   background-color: #eee;
   border: none;
   padding: 12px 15px;
-  margin: 8px 0;
+  margin: 8px 10px;
   width: 100%;
 }
 
@@ -199,21 +199,6 @@ input {
   transform: translateX(20%);
 }
 
-.social-container {
-  margin: 20px 0;
-}
-
-.social-container a {
-  border: 1px solid #dddddd;
-  border-radius: 50%;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 5px;
-  height: 40px;
-  width: 40px;
-}
-
 footer {
   background-color: #222;
   color: #fff;
@@ -231,7 +216,7 @@ footer p {
 }
 
 footer i {
-  color: red;
+  color: rgb(250, 84, 84);
 }
 
 footer a {

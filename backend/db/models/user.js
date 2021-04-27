@@ -77,8 +77,10 @@ User.signup = async function ({ fullName, email, password }) {
   const user = await User.create({
     fullName,
     email,
-    hPassword,
+    password
   });
+  const hashed = await bcrypt.hash(password, 8);
+    user.password = hashed;
   return await User.scope('currentUser').findByPk(user.id);
 };
 
