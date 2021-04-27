@@ -2,7 +2,20 @@ import React from 'react'
 import NavBar from '../NavBar'
 import './LoggedIn.css'
 import airbnbLogo from './airb.png';
+import { useDispatch } from 'react-redux';
+import * as sessionActions from '../../store/session';
+
+
 function LoggedIn({user}) {
+
+const dispatch = useDispatch();
+
+
+ const logout = (e) => {
+    e.preventDefault();
+    dispatch(sessionActions.logout());
+  };
+
     return (
         <div className="navbar">
             <a href="/">
@@ -13,6 +26,11 @@ function LoggedIn({user}) {
             </a>
             <div className="navbar__right">
                 <p className='greeting'>Hey, {user}</p>
+            </div>
+             <div className='navbar__right'>
+                <a href='/'>
+                    <button class='form-button' onSubmit={logout}>Logout</button>
+                </a>
             </div>
         </div>
     )
