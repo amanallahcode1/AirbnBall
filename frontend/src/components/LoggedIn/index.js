@@ -4,17 +4,12 @@ import './LoggedIn.css'
 import airbnbLogo from './airb.png';
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
-
-
 function LoggedIn({user}) {
-
 const dispatch = useDispatch();
-
-
- const logout = (e) => {
+const logout = (e) => {
     e.preventDefault();
-    dispatch(sessionActions.logout());
-  };
+    dispatch(sessionActions.logout())
+}
 
     return (
         <div className="navbar">
@@ -27,11 +22,7 @@ const dispatch = useDispatch();
             <div className="navbar__right">
                 <p className='greeting'>Hey, {user}</p>
             </div>
-             <div className='navbar__right'>
-                <a href='/'>
-                    <button class='form-button' onSubmit={logout}>Logout</button>
-                </a>
-            </div>
+            <button type="submit" onClick={logout}>Log Out</button>
         </div>
     )
 }
