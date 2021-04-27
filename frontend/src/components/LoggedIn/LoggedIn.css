@@ -1,0 +1,49 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: white;
+}
+
+.navbar__icon {
+  object-fit: contain;
+  margin-left: 20px;
+  height: 75px;
+}
+
+.navbar__right {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-button {
+  font-weight: 500;
+  font-size: 2vh;
+  color: black;
+  text-decoration: none;
+  margin-right: 30px;
+  background: none;
+  border: none;
+  padding: 20px 15px;
+  transition-property: "border-radius";
+  transition-delay: 0.15s;
+  transition-duration: 1s;
+}
+.form-button:hover {
+  cursor: pointer;
+  background-color: rgb(202, 187, 187);
+  border-radius: 15px;
+}
+
+.greeting {
+  font-size: 20px;
+  margin-right: 30px;
+}
+ul {
+  list-style-type: none;
+}
