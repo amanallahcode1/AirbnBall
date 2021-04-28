@@ -22,7 +22,9 @@ const logout = (e) => {
             <div className="navbar__right">
                 <p className='greeting'>Hey, {user}</p>
             </div>
-            <button type="submit" onClick={logout}>Log Out</button>
+            <a href="/">
+                <button type="submit" onClick={logout}>Log Out</button>
+            </a>
         </div>
     )
 }
