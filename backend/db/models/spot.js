@@ -1,17 +1,43 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Spot = sequelize.define('Spot', {
-    title: DataTypes.STRING,
-    address: DataTypes.STRING,
-    city: DataTypes.STRING,
-    description: DataTypes.TEXT,
-    price: DataTypes.INTEGER,
-    lat: DataTypes.NUMERIC,
-    lng: DataTypes.NUMERIC,
-    userId: DataTypes.INTEGER
+    title: {
+      type: DataTypes.STRING,
+      allowNull:false
+    },
+    address: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique:true
+  },
+    city: {
+     type:DataTypes.STRING,
+     allowNull: false
+    },
+    description: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    },
+    price: {
+      type:DataTypes.INTEGER,
+      allowNull: false
+    },
+    lat: {
+      type: DataTypes.NUMERIC,
+      allowNull: false
+      },
+    lng: {
+     type: DataTypes.NUMERIC,
+     allowNull: false
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull:false
+      }
   }, {});
   Spot.associate = function(models) {
     // associations can be defined here
+    Spot.belongsTo(models.User, { foreignKey: 'userId' })
   };
   return Spot;
 };
