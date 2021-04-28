@@ -6,6 +6,7 @@ import LoginFormPage from './components/LoginFormPage';
 import * as sessionActions from "./store/session";
 import { useDispatch } from "react-redux";
 import SignupFormPage from "./components/SignUpFormPage"
+import SpotPage from './components/SpotPage'
 import './App.css'
 function App() {
 
@@ -32,6 +33,11 @@ function App() {
         <Route path="/signup">
           <SignupFormPage />
         </Route>
+        <Route path='/spots'>
+          <SpotPage />
+          {console.log("Hello")}
+        </Route>
+
     </Switch>
   </div>
   );
