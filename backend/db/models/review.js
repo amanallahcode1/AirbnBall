@@ -8,6 +8,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   review.associate = function(models) {
     // associations can be defined here
+      review.belongsTo(models.User, {foreignKey: 'userId'})
+    review.belongsTo(models.Spot, {foreignKey: 'spotId'})
+  };
   };
   return review;
-};

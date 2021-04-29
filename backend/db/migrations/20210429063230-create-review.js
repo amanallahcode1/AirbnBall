@@ -9,16 +9,20 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       writer: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(50)
       },
       review: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING(2500),
+        allowNull: false
       },
       userId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {model: 'Users'},
       },
       spotId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        references: {model: 'Spots'},
+        allowNull: false
       },
       createdAt: {
         allowNull: false,

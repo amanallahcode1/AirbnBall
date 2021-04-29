@@ -2,19 +2,19 @@
 const express = require('express')
 const router = express.Router()
 const asyncHandler = require('express-async-handler')
-const {Review} = require('../../db/models')
+const {review} = require('../../db/models')
 
 router.get('/:id', asyncHandler(async(req, res)=>{
-  const listingReviews = await Review.findAll({
+  const reviews = await review.findAll({
     where: {
-      listingId: req.params.id
+      spotId: req.params.id
     }
   })
-  return res.json(listingReviews)
+  return res.json(reviews)
 }))
 
 router.post('/', asyncHandler(async(req, res)=>{
-  let newReview = await Review.create(req.body)
+  let newReview = await review.create(req.body)
   return res.json(newReview)
 }))
 
