@@ -33,7 +33,7 @@ function App() {
         <Route path="/signup">
           <SignupFormPage />
         </Route>
-        <Route path='/spots'>
+        <Route path='/spots:id'>
           <SpotPage />
           {console.log("Hello")}
         </Route>

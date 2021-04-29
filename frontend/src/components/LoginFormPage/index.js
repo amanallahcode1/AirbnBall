@@ -24,12 +24,17 @@ function LoginFormPage() {
         if (data && data.errors) setErrors(data.errors);
       });
   }
+
+  const handleDemoSubmit = async (e) => {
+        e.preventDefault()
+        return dispatch(sessionActions.login({ credential: 'mj@bestplayer.com', password: 'password' }));       
+    }
  
   return (
     <div className="container" id="container">
         
         <div className="form-container sign-in-container">
-            <form className="form-si" onSubmit={handleSubmit}>
+            <form className="form-si" id="form-si" onSubmit={handleSubmit}>
                 <h1>Sign in</h1>
                 <ul>
                     {errors.map((error, idx) => <li key={idx}>{error}</li>)}
@@ -38,6 +43,7 @@ function LoginFormPage() {
                
                 Email
                 <input
+                id='email'
                 type="text"
                 value={credential}
                 onChange={(e) => setCredential(e.target.value)}
@@ -48,12 +54,12 @@ function LoginFormPage() {
                     Password
                 <input  
                 type="password"
+                id='password'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 />
                  </label>
-        <a href="#">Forgot your password?</a>
         <button type="submit">Sign In</button>
             </form>
         </div>
@@ -71,12 +77,12 @@ function LoginFormPage() {
                 </div>
                 <div className="overlay-panel overlay-right">
                     <h1>Hello, Friend!</h1>
-                    <p>Enter your personal details and let's play ball.</p>
-                    <button className="ghost" id="signUp">Sign Up</button>
+                    <p>Sign in with a demo user instead!</p>
+                    <button className="ghost" id="demo" onClick={handleDemoSubmit}>Demo User</button>
                 </div>
             </div>
         </div>
- 
+            
     </div>
  
  

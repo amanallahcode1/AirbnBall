@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Redirect } from 'react-router-dom';
-import { getOneSpot } from '../../store/spots';
+import { getOneSpot, getSpots } from '../../store/spots';
 import './SpotPage.css';
 require('dotenv').config();
 
@@ -10,13 +10,14 @@ function SpotPage() {
     const { id } = useParams();
     const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user);
-    const spot = useSelector((state) => state.spot[id]);
+    const spot = useSelector((state) => state.spots[id]);
     console.log(spot)
 
 
     useEffect(() => {
-        dispatch(getOneSpot(id));
+        return dispatch(getOneSpot(id));
     }, [dispatch, id])
+
 
     if (!spot) {
         return null;
@@ -33,7 +34,8 @@ function SpotPage() {
         )
     return (
     <div className="spot__host-spot">
-        <h1>Hel</h1>
+        <h2>{`${spot[0].title}`}</h2>
+        <h1>Hi</h1>
     </div>
 
 
