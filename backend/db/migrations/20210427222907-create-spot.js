@@ -16,6 +16,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull:false
       },
+      
       city: {
         type: Sequelize.STRING,
         allowNull:false
@@ -30,11 +31,9 @@ module.exports = {
       },
       lat: {
         type: Sequelize.NUMERIC(10,5),
-        allowNull:false
       },
       lng: {
         type: Sequelize.NUMERIC(10,5),
-        allowNull:false
       },
       userId: {
         type: Sequelize.INTEGER,

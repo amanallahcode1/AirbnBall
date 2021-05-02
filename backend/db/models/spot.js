@@ -22,14 +22,7 @@ module.exports = (sequelize, DataTypes) => {
       type:DataTypes.INTEGER,
       allowNull: false
     },
-    lat: {
-      type: DataTypes.NUMERIC,
-      allowNull: false
-      },
-    lng: {
-     type: DataTypes.NUMERIC,
-     allowNull: false
-    },
+  
     userId: {
       type: DataTypes.INTEGER,
       allowNull:false
