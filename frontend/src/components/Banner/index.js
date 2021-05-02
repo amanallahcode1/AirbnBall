@@ -32,7 +32,7 @@ const [endDate, setEndDate] = useState(new Date());
                     </select>
                     <label>PLAYERS</label>
                 </div>
-                <button type='submit' className='submitLocButton'>Search</button>
+                    <button type='submit' className='submitLocButton'>Search</button>
             </form>
           </div>
         </div>

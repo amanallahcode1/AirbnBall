@@ -2,12 +2,14 @@
 const router = require('express').Router();
 const sessionRouter = require('./session.js');
 const usersRouter = require('./users.js');
+const spotRouter = require('./spots');
+
 
 router.use('/session', sessionRouter);
 
 router.use('/users', usersRouter);
 
-// POST /api/test
+router.use('/spots', spotRouter)
  
 module.exports = router;
 

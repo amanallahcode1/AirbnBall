@@ -1,10 +1,7 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
-const db = require('../../db/models');
-const Spot = db.Spot;
-
-const router = express.Router()
-
+const router = express.Router();
+const {Spot} = require('../../db/models');
 router.get('/', asyncHandler(async (req, res) => {
     const spots = await Spot.findAll();
     res.json({ spots: spots })
@@ -14,14 +11,10 @@ router.get('/', asyncHandler(async (req, res) => {
 
 
 router.get('/:id', asyncHandler(async (req, res) => {
-    const spot = [];
-    const id = req.params.id
-
-    const spotObj = await Spot.findByPk(id)
-
-    spot.push(spotObj);
-
-    res.json({ spot });
+   const spotDet = await Spot.findByPk(req.params.id);
+   console.log("Hello l")
+   return res.json(spotDet);
+   
 }))
 
 module.exports = router;

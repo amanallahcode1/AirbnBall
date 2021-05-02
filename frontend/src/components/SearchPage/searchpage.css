@@ -1,0 +1,45 @@
+.searchPage__info {
+  padding: 20px;
+  color: white;
+}
+
+.searchPage__info > p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: white;
+}
+
+.searchPage__info > h1 {
+  margin-bottom: 30px;
+  color: white;
+}
+
+.searchPage__info > button {
+  border-radius: 30px;
+  text-transform: inherit;
+  margin: 5px;
+  color: white;
+}
+
+body {
+  margin: 0;
+  text-align: center;
+}
+
+.textsize {
+  font-size: 35px;
+  font-weight: 800;
+}
+.datesize {
+  font-size: 18px;
+}
+
+.searchPage {
+  color: white;
+  background: rgb(150, 28, 158);
+  background: linear-gradient(
+    90deg,
+    rgba(150, 28, 158, 1) 0%,
+    rgba(142, 140, 15, 1) 100%
+  );
+}

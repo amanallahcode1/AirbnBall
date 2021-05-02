@@ -7,17 +7,16 @@ require('dotenv').config();
 
 
 function SpotPage() {
-    const { id } = useParams();
+ const { id } = useParams();
     const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user);
-    const spot = useSelector((state) => state.spots[id]);
-    console.log(spot)
+    const spot = useSelector(state => state.spots[id]);
+
 
 
     useEffect(() => {
-        return dispatch(getOneSpot(id));
+        dispatch(getOneSpot(id));
     }, [dispatch, id])
-
 
     if (!spot) {
         return null;
@@ -33,13 +32,23 @@ function SpotPage() {
         <h1>Helo</h1>
         )
     return (
-    <div className="spot__host-spot">
-        <h2>{`${spot[0].title}`}</h2>
-        <h1>Hi</h1>
+    <div className="he">
+        <h1>Hl</h1>
+        {console.log(`$${spot.title}/ night`)}
     </div>
-
-
     )
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 export default SpotPage;
@@ -68,32 +77,5 @@ export default SpotPage;
 // on top of return
 
 //     const { id } = useParams();
-//     const dispatch = useDispatch();
-//     const sessionUser = useSelector((state) => state.session.user);
-//     const spot = useSelector(state => state.spots[id]);
-
-
-
-//     useEffect(() => {
-//         dispatch(getOneSpot(id));
-//     }, [dispatch, id])
-
-//     if (!spot) {
-//         return null;
-//     }
-
-//     if (!sessionUser) {
-//         return <Redirect to='/login' />;
-//     }
-
-//     let content = null;
-
-//     content = (
-//         <h1>Helo</h1>
-//         )
-//     return (
-//     <div className="he">
-//         <h1>Hl</h1>
-//     </div>
-//     )
+   
 // }

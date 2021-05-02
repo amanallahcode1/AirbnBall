@@ -70,7 +70,6 @@ input {
   border: none;
   padding: 12px 15px;
   margin: 8px 10px;
-  width: 100%;
 }
 
 .container {
@@ -167,6 +166,25 @@ input {
   transform: translateX(50%);
 }
 
+#email {
+  width: 150px;
+  margin-left: 40px;
+}
+
+#fullName {
+  width: 150px;
+}
+
+#password {
+  width: 150px;
+  margin-left: 8px;
+}
+
+#confirmPassword {
+  width: 150px;
+  margin-right: 68px;
+}
+
 .overlay-panel {
   position: absolute;
   display: flex;
@@ -222,4 +240,29 @@ footer i {
 footer a {
   color: #3c97bf;
   text-decoration: none;
+}
+
+@media only screen and (max-width: 998px) {
+  #email {
+    width: 50px;
+    margin-left: 40px;
+  }
+
+  #fullName {
+    width: 50px;
+  }
+
+  #password {
+    width: 50px;
+    margin-left: 8px;
+  }
+
+  #confirmPassword {
+    width: 50px;
+    margin-right: 68px;
+  }
+
+  #confirmPasswordText {
+    display: none;
+  }
 }
