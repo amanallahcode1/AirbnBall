@@ -1,5 +1,4 @@
 import React from 'react'
-import NavBar from '../NavBar'
 import './LoggedIn.css'
 import airbnbLogo from './airb.png';
 import { useDispatch } from 'react-redux';

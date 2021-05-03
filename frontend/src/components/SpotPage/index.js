@@ -1,19 +1,22 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Redirect } from 'react-router-dom';
 import * as spotActions from '../../store/spots'
 import './SpotPage.css';
 import { NavLink } from 'react-router-dom';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 
 function SpotPage() {
+
+    const [startDate, setStartDate] = useState(new Date());
+    const [endDate, setEndDate] = useState(new Date());
     const { id } = useParams();
-    console.log(id)
     const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user);
     const spot = useSelector(state => state.spots.all[id-1]);
 
-    console.log(spot)
     useEffect(() => {
         dispatch(spotActions.getOneSpot(id));
     }, [dispatch, id])
@@ -22,18 +25,33 @@ function SpotPage() {
         return null;
     }
 
-    if (!sessionUser) {
-        return <Redirect to='/login' />;
-    }
 
-    let content = null;
 
-    content = (
-        <h1>Helo</h1>
-        )
     return (
-    <div className="he">
-    </div>
+        <div className="listingDetail">
+            <div className="title">
+                {spot.title}
+            </div>
+            <div className="listingPicture">
+                <img className="bigPic" src={spot.imgUrl1} alt='Court'/>
+                <img className="smallPic" src={spot.imgUrl2} alt='Court'/>
+                <img className="smallPic" src={spot.imgUrl3} alt='Court'/>
+                <img className="widerPic" src={spot.imgUrl3} alt="Court" />
+            </div>
+            <div className='splash-form'>
+                <h2 id='book'>Book this court!</h2>
+                <div className="date-box">
+                    <DatePicker selected={startDate} onChange={date=> setStartDate(date)} />
+                    <DatePicker selected={endDate} onChange={date=> setEndDate(date)} />
+                </div>
+                <a href="#">
+                    <button className="submitLocButton" id="reserveButton">Reserve</button>
+                </a>
+            </div>
+
+            <p id="description">{spot.description}</p>
+            <p id="price">${spot.price} per day</p>
+        </div>
     )
 
 

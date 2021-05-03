@@ -2,18 +2,16 @@ import React from 'react';
 import './searchpage.css';
 import SearchResult from "../SearchResult";
 import * as spotActions from '../../store/spots'
-import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 function SearchPage() {
   const dispatch = useDispatch()
   const spots = useSelector(state => state.spots.all)
-  const sessionUser = useSelector(state => state.session.user)
 
    useEffect(() => {
         dispatch(spotActions.getSpots())
-  }, [11])
+  }, [dispatch])
 
   return (
       <div className='searchPage'>

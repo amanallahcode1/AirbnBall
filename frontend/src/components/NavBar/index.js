@@ -1,7 +1,6 @@
 import React from 'react'
 import airbnbLogo from './airb.png'
 import './navbar.css'
-import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import LoggedIn from '../LoggedIn';
 
