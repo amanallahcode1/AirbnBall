@@ -26,7 +26,20 @@ module.exports = (sequelize, DataTypes) => {
     userId: {
       type: DataTypes.INTEGER,
       allowNull:false
-      }
+      },
+
+    imgUrl1: {
+        type: DataTypes.STRING,
+      },
+
+    imgUrl2: {
+      type: DataTypes.STRING,
+      },
+       
+    imgUrl3: {
+        type: DataTypes.STRING,
+        
+      },
   }, {});
   Spot.associate = function(models) {
     // associations can be defined here

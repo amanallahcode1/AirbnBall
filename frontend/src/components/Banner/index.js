@@ -13,7 +13,7 @@ const [endDate, setEndDate] = useState(new Date());
           <div id='splash-form'>
               <h2>Book a court. Let's ball.
               </h2>
-            <form>
+            
                 <div className="user-box">
                     <input type="text" name="" required="" placeholder="Try 'Los Angeles'..."/>
                     <label>LOCATION</label>
@@ -32,8 +32,10 @@ const [endDate, setEndDate] = useState(new Date());
                     </select>
                     <label>PLAYERS</label>
                 </div>
-                    <button type='submit' className='submitLocButton'>Search</button>
-            </form>
+                <a href="/search">
+                    <button className='submitLocButton'>Search</button>
+                </a>
+            
           </div>
         </div>
     )

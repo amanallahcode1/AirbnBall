@@ -8,45 +8,55 @@ export const ADD_SPOT = 'spot/ADD_SPOT';
 const load = (spots) => {
     return {
         type: LOAD_SPOTS,
-        payload: spots
+        spots
     };
 };
 
 const loadSpot = (spot) => {
     return {
         type: LOAD_SPOT,
-        payload: spot
+        spot
     }
 }
 
 export const getSpots = () => async (dispatch) => {
-    const response = await csrfFetch('/api/spots');
+    const response = await csrfFetch(`/api/search`);
     const data = await response.json();
-    dispatch(load(data.spots));
+    dispatch(load(data.allDestinations));
     return data;
+    
+   
 }
 
 export const getOneSpot = (id) => async (dispatch) => {
     const numId = Number(id);
-    const response = await csrfFetch(`/api/spots`);
+    const response = await csrfFetch(`/api/search/${numId}`);
+   
     const data = await response.json();
-    dispatch(loadSpot(data.spot));
+    dispatch(loadSpot(data.oneDest));
+    
+   
     return data
 }
 
 
-const initialState = {};
 
-const spotsReducer = (state = initialState, action) => {
+const spotsReducer = (state = {all: [], current:{}} , action) => {
     let newState;
+     let spot;
     switch (action.type) {
-        case LOAD_SPOTS: {
-            newState = {};
-            action.payload.forEach(spot => {
-                newState[spot.id] = spot
-            })
-            return newState;
-        }
+    case LOAD_SPOTS: {
+      const newState = {}
+      const allListings = []
+      for (let i = 0; i<10; i++) {
+          let listing = action.spots[i];
+          allListings.push(listing)
+      }
+   
+      newState.all=allListings
+      newState.current = {...state.current}
+      return newState
+    }
         default:
             return state;
     }

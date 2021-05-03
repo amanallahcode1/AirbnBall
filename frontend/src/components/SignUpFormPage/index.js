@@ -17,7 +17,7 @@ function SignupFormPage() {
 
 const handleDemoSubmit = async (e) => {
     e.preventDefault()
-    return dispatch(sessionActions.login({ credential: 'mj@bestplayer.com', password: 'password' }));       
+    return dispatch(sessionActions.login({ credential: 'demo@user.io', password: 'password' }));       
     }
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -99,7 +99,7 @@ const handleDemoSubmit = async (e) => {
                 </div>
                 <div className="overlay-panel overlay-right">
                     <h1>Hello, Friend!</h1>
-                    <p>Sign in with a demo user instead!</p>
+                    <p className="overlayp">Sign in with a demo user instead!</p>
                     <button className="ghost" id="demo" onClick={handleDemoSubmit}>Demo User</button>
                 </div>
             </div>

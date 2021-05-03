@@ -2,6 +2,7 @@ import React from 'react';
 import './searchresult.css';
 
 
+
 function SearchResult({
     img,
     location,
@@ -20,7 +21,6 @@ function SearchResult({
                 <div className="searchResult__infoTop">
                     <p>{location}</p>
                     <h3>{title}</h3>
-                    <p>____</p>
                     <p>{description}</p>
                 </div>
 

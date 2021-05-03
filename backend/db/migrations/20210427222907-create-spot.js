@@ -44,6 +44,16 @@ module.exports = {
           },
        
       },
+       imgUrl1: {
+        type: Sequelize.STRING,
+      },
+       imgUrl2: {
+        type: Sequelize.STRING,
+      },
+       imgUrl3: {
+        type: Sequelize.STRING,
+        
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

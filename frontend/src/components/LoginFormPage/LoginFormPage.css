@@ -130,7 +130,9 @@ input {
     z-index: 5;
   }
 }
-
+.overlayp {
+  color: white;
+}
 .overlay-container {
   position: absolute;
   top: 0;

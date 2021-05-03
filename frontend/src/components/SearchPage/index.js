@@ -1,17 +1,44 @@
 import React from 'react';
 import './searchpage.css';
 import SearchResult from "../SearchResult";
-
+import * as spotActions from '../../store/spots'
+import { useParams } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 function SearchPage() {
-    return (
-        
-            <div className='searchPage'>
-                <div className='searchPage__info'>
-                    <p className='dateSize'>4 may to 8 august · 8 guest</p>
-                    <h1 className='textsize'>Courts nearby</h1>
-        
-                </div>
+  const dispatch = useDispatch()
+  const spots = useSelector(state => state.spots.all)
+  const sessionUser = useSelector(state => state.session.user)
+
+   useEffect(() => {
+        dispatch(spotActions.getSpots())
+  }, [11])
+
+  return (
+      <div className='searchPage'>
+        <div className='searchPage__info'>
+            <h1 className='textsize'>Courts available nearby Los Angeles</h1>
+        </div>
+
+        {spots.map(spot => (
+            <Link key={spot.id} to={`/spots/${spot.id}`}>
                 <SearchResult
+                img = {spot.imgUrl1}
+                location="Basketball gym in Los Angeles"
+                title={spot.title}
+                description="8 guests · 1 full court · 8 gatorades · 1 shared locker room · Wifi · Towels · Free parking · Shower"
+                // star={`${parseFloat((Math.random(1)*5) + 1).toFixed(2)} *`}
+                price={`$${spot.price} / day`}
+                total={`$${spot.price*3} total`}
+                />
+            </Link>
+        ))}
+        
+      </div>
+  )
+
+}             {/* <SearchResult
                     img="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ_wbPYTxQPMcBh7SPzLFActXnP3uhifeVT_g&usqp=CAU"
                     location="Basketball gym in Los Angeles"
                     title="Stay at this spacious Edwardian House"
@@ -75,9 +102,7 @@ function SearchPage() {
                     star={3.85}
                     price="£90 / day"
                     total="£650 total"
-                />
-            </div>
-    )
-}
-
+                /> */}
+         
+ 
 export default SearchPage

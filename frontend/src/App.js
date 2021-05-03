@@ -40,12 +40,9 @@ function App() {
           <NavBar />
           <SearchPage />
         </Route>
-        <Route path='/spots'>
-          <Route path='/:id'>
+        <Route path='/spots/:id'>     
             <NavBar />
-            <SpotPage />
-          </Route>
-         
+            <SpotPage /> 
         </Route>
 
     </Switch>

@@ -1,24 +1,30 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+
 .searchPage__info {
   padding: 20px;
-  color: white;
+  color: black;
 }
 
 .searchPage__info > p {
   margin-bottom: 10px;
   font-size: 14px;
-  color: white;
+  color: black;
 }
 
 .searchPage__info > h1 {
   margin-bottom: 30px;
-  color: white;
+  color: black;
 }
 
 .searchPage__info > button {
   border-radius: 30px;
   text-transform: inherit;
   margin: 5px;
-  color: white;
+  color: black;
+}
+
+p {
+  color: black;
 }
 
 body {
@@ -26,20 +32,23 @@ body {
   text-align: center;
 }
 
-.textsize {
-  font-size: 35px;
+h1.textsize {
+  font-family: "Montserrat";
+  font-size: 30px;
   font-weight: 800;
+  margin-right: 855px;
+  color: rgb(99, 97, 97);
+}
+
+@media screen and (max-width: 1062px) {
+  .textsize {
+    display: none;
+  }
 }
 .datesize {
   font-size: 18px;
 }
 
 .searchPage {
-  color: white;
-  background: rgb(150, 28, 158);
-  background: linear-gradient(
-    90deg,
-    rgba(150, 28, 158, 1) 0%,
-    rgba(142, 140, 15, 1) 100%
-  );
+  color: black;
 }

@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Redirect } from 'react-router-dom';
-import { getOneSpot, getSpots } from '../../store/spots';
+import * as spotActions from '../../store/spots'
 import './SpotPage.css';
-require('dotenv').config();
+import { NavLink } from 'react-router-dom';
 
 
 function SpotPage() {
- const { id } = useParams();
+    const { id } = useParams();
+    console.log(id)
     const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user);
-    const spot = useSelector(state => state.spots[id]);
+    const spot = useSelector(state => state.spots.all[id-1]);
 
-
-
+    console.log(spot)
     useEffect(() => {
-        dispatch(getOneSpot(id));
+        dispatch(spotActions.getOneSpot(id));
     }, [dispatch, id])
 
     if (!spot) {
@@ -33,8 +33,6 @@ function SpotPage() {
         )
     return (
     <div className="he">
-        <h1>Hl</h1>
-        {console.log(`$${spot.title}/ night`)}
     </div>
     )
 
