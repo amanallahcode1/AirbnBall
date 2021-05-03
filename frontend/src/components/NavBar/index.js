@@ -1,5 +1,5 @@
 import React from 'react'
-import airbnbLogo from './airb.png'
+import airbnbLogo from './bnball.png'
 import './navbar.css'
 import { useSelector } from 'react-redux';
 import LoggedIn from '../LoggedIn';

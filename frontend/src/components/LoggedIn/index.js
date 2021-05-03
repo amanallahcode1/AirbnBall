@@ -1,6 +1,6 @@
 import React from 'react'
 import './LoggedIn.css'
-import airbnbLogo from './airb.png';
+import airbnbLogo from './bnball.png';
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 function LoggedIn({user}) {

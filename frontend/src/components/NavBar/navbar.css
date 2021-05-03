@@ -7,11 +7,13 @@
   z-index: 100;
   width: 100%;
   background-color: white;
+  height: 60px;
 }
 
 .navbar__icon {
   object-fit: contain;
   margin-left: 20px;
+  width: 100px;
   height: 75px;
 }
 
