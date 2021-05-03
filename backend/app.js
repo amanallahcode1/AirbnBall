@@ -27,15 +27,13 @@ app.use(helmet({
     contentSecurityPolicy: false
 }));
 // Set _csrf token and create req.csrfToken method
-app.use(
-    csurf({
-        cookie:{
-            secure: isProduction,
-            sameSite: isProduction && 'Lax',
-            httpOnly: true,
-        },
-    })
-);
+app.use(csrf({cookie: true}));
+
+// Make the token available to all views
+app.use(function (req, res, next){
+    res.locals._csrf = req.csrfToken();
+    next();
+});
 app.use(routes)
 
 // Catch unhandled requests and forward to error handler.
