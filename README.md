@@ -1,4 +1,25 @@
 # AirbnBall
+
+## Live Site [AirbnBall](http://airbnball.herokuapp.com)
+
+#### AirbnBall, an AirBnB clone, is a single-page application that allows users to book and check out basketball courts in their area.
+
+## Technologies
+
+### Frontend
+ - React
+ - Redux
+ - CSS
+ 
+### Backend
+ - Express
+ - Faker
+ - bcryptjs
+ - Sequelize/sequelize-cli
+ - PostgreSQL Database
+
+## Features
+
 ACCOUNT CREATION
 
  - User auth from end to end
@@ -16,6 +37,7 @@ BOOKING
  - Be able to reserve a court when logged in (LA)
  - User can see all their bookings
 
+## Check out more detais at the [wiki](https://github.com/amanallahcode1/AirbnBall/wiki)
 
 
 
