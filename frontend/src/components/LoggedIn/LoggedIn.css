@@ -42,8 +42,13 @@
 
 .greeting {
   font-size: 20px;
-  margin-right: 30px;
+  position: absolute;
+  left: 42%;
 }
 ul {
   list-style-type: none;
+}
+
+#logged-out {
+  margin-right: -650px;
 }

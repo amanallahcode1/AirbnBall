@@ -26,7 +26,7 @@ const logout = (e) => {
                 <p className='greeting'>Hey, {user}</p>
             </div>
             <a href="/">
-                <button type="submit" onClick={logout}>Log Out</button>
+                <button type="submit" onClick={logout} id="logged-out">Log Out</button>
             </a>
             <a href='/about'>
                 <button class='form-button'>About</button>
