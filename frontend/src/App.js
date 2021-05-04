@@ -8,8 +8,11 @@ import { useDispatch } from "react-redux";
 import SignupFormPage from "./components/SignUpFormPage"
 import SpotPage from './components/SpotPage'
 import SearchPage from './components/SearchPage';
-import Booking from './components/Booking'
+import Booking from './components/Booking';
+import About from './components/About';
+
 import './App.css'
+
 function App() {
 
 
@@ -44,12 +47,18 @@ function App() {
         <Route path='/spots/:id'>     
             <NavBar />
             <SpotPage /> 
-        </Route>
+          </Route>
 
         <Route path='/booking'>
+          <NavBar />
           <Booking />
         </Route>
 
+        <Route path='/about'>
+          <NavBar />
+          <About />
+        </Route>
+        
     </Switch>
   </div>
   );

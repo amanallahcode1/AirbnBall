@@ -1,13 +1,17 @@
 import React from 'react'
+import {Redirect} from 'react-router';
 import './LoggedIn.css'
 import airbnbLogo from './bnball.png';
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
+
+
 function LoggedIn({user}) {
 const dispatch = useDispatch();
 const logout = (e) => {
     e.preventDefault();
     dispatch(sessionActions.logout())
+    
 }
 
     return (

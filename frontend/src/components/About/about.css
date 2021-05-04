@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900;&display=swap");
+
+.contact1 {
+  position: relative;
+  min-height: 100vh;
+  padding: 50px 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url("https://i.insider.com/5bbcff96ac0a6329bd3faf65?width=1136&format=jpeg");
+  background-size: cover;
+  opacity: 0.9;
+}
+.hContact {
+  color: #fff;
+  font-family: "Montserrat";
+  text-align: left;
+}
+
+#contactme1 {
+  margin-left: 10px;
+}
+.box1 {
+  margin-top: 40px;
+  position: sticky;
+}
+.contactInfo1 {
+  margin-bottom: -70px;
+  margin-left: 30px;
+}
+.contact1 .content1 {
+  max-width: 400px;
+  text-align: center;
+}
+
+.contact1 .content1 h2 {
+  font-size: 36px;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+}
+
+.contact1 .content1 p {
+  margin-left: 0px;
+  font-weight: 300;
+  color: rgb(0, 0, 0);
+}
+
+.container1 {
+  position: absolute;
+  margin-right: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  width: 600px;
+  left: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: relative;
+  overflow: hidden;
+  height: 400px;
+}
+
+.container .contactInfo {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
