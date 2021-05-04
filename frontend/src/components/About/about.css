@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900;&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
 
 .contact1 {
   position: relative;
@@ -8,9 +8,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: url("https://i.insider.com/5bbcff96ac0a6329bd3faf65?width=1136&format=jpeg");
-  background-size: cover;
-  opacity: 0.9;
+  background: url("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/dd6b9795847219.5ea0ca5e4f6ef.jpg");
+  background-repeat: no-repeat;
 }
 .hContact {
   color: #fff;
@@ -52,9 +51,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
-  width: 600px;
-  left: 30px;
+  margin-top: -435px;
+  width: 550px;
+  left: 503px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -67,4 +66,12 @@
   width: 80%;
   display: flex;
   flex-direction: column;
+}
+
+#createdBy {
+  position: absolute;
+  margin-left: 950px;
+  bottom: 275px;
+  font-family: "Montserrat";
+  font-weight: 300;
 }

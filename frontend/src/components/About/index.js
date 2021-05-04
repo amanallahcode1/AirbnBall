@@ -54,6 +54,7 @@ function About() {
                     </div>
                    
                 </div>
+                <h1 id="createdBy">Created by Shahene Chaouachi.</h1>
             </section>
         </div>
     )
