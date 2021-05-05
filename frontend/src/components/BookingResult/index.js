@@ -1,9 +1,7 @@
-import React from 'react';
-import './searchresult.css';
+import './BookingResult.css'
+import React from 'react'
 
-
-
-function SearchResult({
+function BookingResult({
     img,
     location,
     title,
@@ -11,10 +9,9 @@ function SearchResult({
     star,
     price,
     total,
-    
 }) {
     return (
-        <div className='searchResult'>
+        <div className='searchResult1'>
             <img src={img} alt="" />
           
 
@@ -35,11 +32,12 @@ function SearchResult({
                         <h2>{price}</h2>
                         <p>{total}</p>
                     </div>
-                
+                    
+                    <button id="deleteButton" type="submit">Delete</button> 
                 </div>
             </div>
         </div>
     )
 }
 
-export default SearchResult
+export default BookingResult;

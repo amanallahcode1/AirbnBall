@@ -1,0 +1,7 @@
+#deleteButton {
+  background-color: tomato;
+}
+#deleteButton:hover {
+  background-color: rgb(247, 136, 136);
+  cursor: pointer;
+}

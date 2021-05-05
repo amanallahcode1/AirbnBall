@@ -11,7 +11,7 @@ const [endDate, setEndDate] = useState(new Date());
     return (
         <div className='banner'>
           <div id='splash-form'>
-              <h2>Book a court. Let's ball.
+              <h2>Let's play ball.
               </h2>
             
                 <div className="user-box">

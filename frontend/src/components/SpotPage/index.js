@@ -6,52 +6,86 @@ import './SpotPage.css';
 import { NavLink } from 'react-router-dom';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-
+import * as reviewActions from '../../store/reviews'
+import LoginFormPage from '../LoginFormPage'
+import styled from 'styled-components';
+import { Modal } from '../Modal';
 
 function SpotPage() {
-
+    const [showModal, setShowModal] = useState(false);
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
     const { id } = useParams();
     const dispatch = useDispatch();
     const sessionUser = useSelector((state) => state.session.user);
     const spot = useSelector(state => state.spots.all[id-1]);
+    const reviews = useSelector(state=> state.reviews.all)
+
 
     useEffect(() => {
         dispatch(spotActions.getOneSpot(id));
+        dispatch(reviewActions.getReviews(id));
     }, [dispatch, id])
+
+    const deleteOneReview = (id) => {
+     dispatch(reviewActions.deleteReview(id))   
+    }
+    const openModal = () => {
+        setShowModal(prev => !prev)
+    }
+  
 
     if (!spot) {
         return null;
     }
-
-
-
-    return (
-        <div className="listingDetail">
+    let content;
+   if (sessionUser) {
+        content = (
+            <div className="listingDetail">
             <div className="title">
                 {spot.title}
             </div>
             <div className="listingPicture">
                 <img className="bigPic" src={spot.imgUrl1} alt='Court'/>
-                <img className="smallPic" src={spot.imgUrl2} alt='Court'/>
+                <img className="smallPic" src={spot.imgUrl1} alt='Court'/>
                 <img className="smallPic" src={spot.imgUrl3} alt='Court'/>
                 <img className="widerPic" src={spot.imgUrl3} alt="Court" />
             </div>
-            <div className='splash-form'>
-                <h2 id='book'>Book this court!</h2>
-                <div className="date-box">
-                    <DatePicker selected={startDate} onChange={date=> setStartDate(date)} />
-                    <DatePicker selected={endDate} onChange={date=> setEndDate(date)} />
-                </div>
-                <a href="#">
-                    <button className="submitLocButton" id="reserveButton">Reserve</button>
-                </a>
-            </div>
-
             <p id="description">{spot.description}</p>
             <p id="price">${spot.price} per day</p>
+
+            <div className="container2">
+                <div className="row">
+                    <div className="col-md-4">
+                        <h2 id="reviewtext">Reviews</h2>
+                        <button id="modal1" onClick={openModal}>Leave Review</button>
+                        <Modal showModal={showModal} setShowModal={setShowModal}/>    
+                            {reviews.map(review => (
+                                <div class="card card-1">
+                                    <h3 value={review.author}>{review.author}</h3>
+                                    <p value={review.review}>{review.review}</p>
+                                </div>
+                            ))}
+                           
+                     
+                    </div>
+
+                </div>
+            </div>
         </div>
+        )
+   } else {
+       content = (
+
+           <LoginFormPage />
+       )
+   }
+
+    return (
+        <div>
+            {content}
+        </div>
+        
     )
 
 

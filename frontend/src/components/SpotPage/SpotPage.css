@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
-
 .listingPicture {
   width: 100%;
   border-radius: 3px;
@@ -37,7 +36,7 @@
   width: 698px;
   height: 308px;
   position: absolute;
-  top: 57.5%;
+  top: 50.5%;
   left: 54%;
 }
 
@@ -52,4 +51,55 @@
   width: 50%;
   margin-left: 20px;
   line-height: 2rem;
+}
+
+.card {
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+  transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+    0.3s box-shadow,
+    0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+  padding: 14px 80px 18px 36px;
+  width: 200px;
+  height: 200px;
+  float: left;
+  margin: 30px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.card h3 {
+  font-weight: 600;
+}
+
+.card img {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  max-height: 120px;
+}
+
+.card-1 {
+  background-image: url(./jordan.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 80px;
+}
+#reviewtext {
+  margin-right: 1360px;
+}
+@media (max-width: 990px) {
+  .card {
+    margin: 20px;
+  }
+}
+
+#modal1 {
+  background-color: #d51adb;
+  border: 1px solid #d51adb;
+  margin-right: 1275px;
 }

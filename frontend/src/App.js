@@ -49,7 +49,7 @@ function App() {
             <SpotPage /> 
           </Route>
 
-        <Route path='/booking'>
+        <Route path='/bookings'>
           <NavBar />
           <Booking />
         </Route>
@@ -58,7 +58,7 @@ function App() {
           <NavBar />
           <About />
         </Route>
-        
+
     </Switch>
   </div>
   );
