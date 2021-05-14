@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
+import { useSelector } from 'react-redux';
 
 import "react-datepicker/dist/react-datepicker.css";
 import './banner.css';
 
 function Banner() {
+    const sessionUser = useSelector((state) => state.session.user);
 
 const [startDate, setStartDate] = useState(new Date());
 const [endDate, setEndDate] = useState(new Date());

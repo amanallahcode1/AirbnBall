@@ -21,7 +21,6 @@ function SpotPage() {
     const spot = useSelector(state => state.spots.all[id-1]);
     const reviews = useSelector(state=> state.reviews.all)
 
-
     useEffect(() => {
         dispatch(spotActions.getOneSpot(id));
         dispatch(reviewActions.getReviews(id));
