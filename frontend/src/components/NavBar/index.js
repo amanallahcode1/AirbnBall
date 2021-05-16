@@ -30,7 +30,7 @@ function NavBar({ isLoaded }) {
                 <a href='/login'>
                     <button class='form-button'>Login</button>
                 </a>  
-                 <a href='/about'>
+                 <a href='/about' id="aboutButton">
                     <button class='form-button'>About</button>
                 </a>             
             </div>

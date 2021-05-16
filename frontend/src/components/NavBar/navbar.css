@@ -41,3 +41,9 @@
   background-color: rgb(202, 187, 187);
   border-radius: 15px;
 }
+
+@media only screen and (max-width: 1000px) {
+  #aboutButton {
+    visibility: hidden;
+  }
+}

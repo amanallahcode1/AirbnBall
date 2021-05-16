@@ -27,9 +27,9 @@ const logout = (e) => {
             <a href="/">
                 <button type="submit" onClick={logout} id="logged-out">Log Out</button>
             </a>
-            <a href='/about'>
+            {/* <a href='/about' id="aboutButton">
                 <button class='form-button'>About</button>
-            </a>       
+            </a>        */}
         </div>
     )
 }
