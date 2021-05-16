@@ -6,6 +6,7 @@ import * as spotActions from '../../store/spots'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import MapContainer from '../MapContainer';
 
 
 function SearchPage() {
@@ -33,7 +34,9 @@ function SearchPage() {
                 />
             </Link>
         ))}
-        
+        <div className="googleMapContainer">
+            <MapContainer />
+        </div>
       </div>
   )
 

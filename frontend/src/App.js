@@ -28,9 +28,7 @@ function App() {
     
       <Switch>
         <Route exact path="/">
-          <NavBar />
-          <MapContainer />
-          
+          <NavBar />    
           <Home />
         </Route>
         <Route exact path="/login">

@@ -5,13 +5,14 @@
   padding: 20px;
   border-bottom: 1px solid lightgray;
   cursor: pointer;
+  width: 900px;
 }
 
 .searchResult:hover {
   opacity: 0.8;
 }
 
-.searchResult > img {
+.searchResult img {
   height: 200px;
   width: 350px;
   border-radius: 10px;
