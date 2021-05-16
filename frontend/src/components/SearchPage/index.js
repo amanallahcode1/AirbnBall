@@ -2,13 +2,7 @@ import React from 'react';
 import './searchpage.css';
 import SearchResult from "../SearchResult";
 import * as spotActions from '../../store/spots'
-import * as reviewActions from '../../store/reviews'
 
-export default GoogleApiWrapper({
-  apiKey: 'AIzaSyAQfjQr8dZO1Nio3JrE_PBuk79lJTEZoi8'
-})(MapContainer);
-
-import { Map, GoogleApiWrapper } from 'google-maps-react'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
@@ -31,14 +25,7 @@ function SearchPage() {
         <div className='searchPage__info'>
             <h1 className='textsize'>Courts available nearby Los Angeles</h1>
         </div>
-
-        <Map 
-          google={this.props.google}
-          zoom={8}
-          style={mapStyles}
-          initialCenter={{ lat: 47.444, lng: -122.176 }} />
-      
-
+    
         {spots.map(spot => (
             <Link key={spot.id} to={`/spots/${spot.id}`}>
                 <SearchResult
