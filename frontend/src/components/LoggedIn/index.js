@@ -5,7 +5,6 @@ import airbnbLogo from './bnball.png';
 import { useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 
-
 function LoggedIn({user}) {
 const dispatch = useDispatch();
 const logout = (e) => {
@@ -30,7 +29,7 @@ const logout = (e) => {
             </a>
             <a href='/about'>
                 <button class='form-button'>About</button>
-            </a>             
+            </a>       
         </div>
     )
 }

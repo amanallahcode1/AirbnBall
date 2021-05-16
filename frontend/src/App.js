@@ -10,7 +10,7 @@ import SpotPage from './components/SpotPage'
 import SearchPage from './components/SearchPage';
 import Booking from './components/Booking';
 import About from './components/About';
-
+import MapContainer from './components/MapContainer'
 import './App.css'
 
 function App() {
@@ -29,6 +29,8 @@ function App() {
       <Switch>
         <Route exact path="/">
           <NavBar />
+          <MapContainer />
+          
           <Home />
         </Route>
         <Route exact path="/login">
