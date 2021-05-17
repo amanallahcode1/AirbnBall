@@ -72,9 +72,9 @@ function MapContainer() {
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={10}
-        onLoad={onLoad}
-        onUnmount={onUnmount}
+        zoom={9}
+        
+        
       >
         { /* Child components, such as markers, info windows, etc. */ }
         <></>
