@@ -63,6 +63,7 @@
 
 .searchResults__price > p {
   text-align: right;
+  margin-bottom: 10px;
 }
 
 .searchResults__price {
