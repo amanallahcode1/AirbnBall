@@ -1,14 +1,3 @@
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  width: 100%;
-  background-color: white;
-}
-
 .navbar__icon {
   object-fit: contain;
   margin-left: 20px;
