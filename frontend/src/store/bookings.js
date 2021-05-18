@@ -14,14 +14,18 @@ export const createNewBooking = addedBooking => async dispatch => {
   const response = await csrfFetch(`/api/bookings`, {
   method: 'POST',
   body: JSON.stringify(addedBooking)
+
   }
 )
+  const newBooking = await response.json()
+   dispatch(createBooking(newBooking))
+
+  console.log(newBooking)
+  console.log("Hlloeoifeiofj")
   console.log("This is getting hit")
   console.log(response)
   if(!response.ok) throw response;
 
-  const newBooking = await response.json()
-  await dispatch(createBooking(newBooking))
 
 }
 
