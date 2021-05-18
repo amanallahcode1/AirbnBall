@@ -1,32 +1,32 @@
 const express = require('express');
 const asyncHandler = require('express-async-handler');
+const db = require('../../db/models');
+
+const Booking = db.Booking;
+
 const router = express.Router();
-const {Booking} = require('../../db/models')
 
 
-router.get('/', asyncHandler(async (req, res) => {
-    const bookings = await Booking.findAll();
-    return res.json({bookings});
-   
-}))
+router.post('/', asyncHandler(async (req, res) => {
+    const { startDate, endDate, userId, spotId } = req.body;
 
-router.post('/:id', asyncHandler(async (req, res) => {
-const {spotId, userId} = req.body;
+    const booking = await Booking.create({
+        startDate,
+        endDate,
+        userId,
+        spotId
+    });
 
-let newBooking = await Booking.create({
-    spotId,
-    userId
-})
- 
-return res.json(newBooking);
+    res.json({ booking })
 }));
 
 
-router.delete('/:id', asyncHandler(async (req,res)=>{
-  const booking = await Booking.findByPk(req.params.id)
-  await booking.destroy()
-  res.status(204).end()
+module.exports = router
+
+// router.delete('/:id', asyncHandler(async (req,res)=>{
+//   const booking = await Booking.findByPk(req.params.id)
+//   await booking.destroy()
+//   res.status(204).end()
 
 
-}))
-module.exports = router;
+// }))
