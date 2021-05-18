@@ -12,7 +12,7 @@ router.use('/users', usersRouter);
 
 router.use('/search', spotRouter)
 
-router.use('/booking', bookingRouter )
+router.use('/bookings', bookingRouter )
 
 router.use('/reviews', reviewsRouter)
 
