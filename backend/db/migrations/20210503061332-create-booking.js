@@ -9,10 +9,10 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       startDate: {
-        type: Sequelize.DATEONLY
+        type: Sequelize.STRING
       },
       endDate: {
-        type: Sequelize.DATEONLY
+        type: Sequelize.STRING
       },
       spotId: {
         type: Sequelize.INTEGER,
