@@ -13,7 +13,7 @@ function Booking({id}) {
       console.log("Hey")
       const newBooking = {
         spotId: 1,
-        userId: 2
+        userId: 1
       }
     await dispatch(createNewBooking(newBooking))
      console.log("No")

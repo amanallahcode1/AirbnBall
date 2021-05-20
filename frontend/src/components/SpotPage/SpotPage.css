@@ -103,3 +103,11 @@
   border: 1px solid #d51adb;
   margin-right: 1275px;
 }
+
+.reserveButton {
+  position: relative;
+  left: 200px;
+  bottom: 170px;
+  background-color: #dfa730;
+  border: 1px solid #d51adb;
+}

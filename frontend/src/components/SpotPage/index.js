@@ -7,6 +7,7 @@ import { NavLink } from 'react-router-dom';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import * as reviewActions from '../../store/reviews'
+import * as bookingActions from '../../store/bookings'
 import LoginFormPage from '../LoginFormPage'
 import styled from 'styled-components';
 import { Modal } from '../Modal';
@@ -20,14 +21,19 @@ function SpotPage() {
     const sessionUser = useSelector((state) => state.session.user);
     const spot = useSelector(state => state.spots.all[id-1]);
     const reviews = useSelector(state=> state.reviews.all)
-
+    const bookings = useSelector(state => state.bookings.all)
+    console.log("4856846856", bookings)
     useEffect(() => {
         dispatch(spotActions.getOneSpot(id));
         dispatch(reviewActions.getReviews(id));
+       dispatch(bookingActions.getBookings(id))
     }, [dispatch, id])
 
     const deleteOneReview = (id) => {
      dispatch(reviewActions.deleteReview(id))   
+    }
+    const reserveCourt = id => {
+        dispatch(bookingActions.getBookings(id))
     }
     const openModal = () => {
         setShowModal(prev => !prev)
@@ -57,7 +63,8 @@ function SpotPage() {
                 <div className="row">
                     <div className="col-md-4">
                         <h2 id="reviewtext">Reviews</h2>
-                        <button id="modal1" onClick={openModal}>Leave Review</button>
+                        <button id="modal1" id="modal1" onClick={openModal}>Leave Review</button>
+                        <button id="modal1" className="modal1" className="reserveButton" onClick={reserveCourt}>Reserve Court</button>
                         <Modal showModal={showModal} setShowModal={setShowModal}/>    
                             {reviews.map(review => (
                                 <div class="card card-1">

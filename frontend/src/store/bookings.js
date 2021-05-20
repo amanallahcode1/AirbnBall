@@ -1,16 +1,19 @@
 import { csrfFetch } from './csrf';
 
 const CREATE_BOOKING = 'bookings/CREATE_BOOKINGS'
+const LOAD_BOOKINGS = 'bookings/LOAD_BOOKINGS'
 
 const createBooking = newBooking => ({
   type: CREATE_BOOKING,
   newBooking
 })
-
+const loadBooking = bookings => ({
+  type: LOAD_BOOKINGS,
+  bookings
+})
 
 export const createNewBooking = addedBooking => async dispatch => {
  
-  console.log("***********");
   const response = await csrfFetch(`/api/bookings`, {
   method: 'POST',
   body: JSON.stringify(addedBooking)
@@ -18,16 +21,23 @@ export const createNewBooking = addedBooking => async dispatch => {
   }
 )
   const newBooking = await response.json()
-   dispatch(createBooking(newBooking))
+    dispatch(createBooking(newBooking))
 
-  console.log(newBooking)
-  console.log("Hlloeoifeiofj")
-  console.log("This is getting hit")
-  console.log(response)
+
   if(!response.ok) throw response;
 
 
 }
+
+export const getBookings = (id) => async dispatch => {
+  const res = await fetch(`/api/bookings/${id}`)
+  if(res.ok){
+    
+    const bookings = await res.json()
+    dispatch(loadBooking(bookings))
+  }
+}
+
 
 
 const bookingsReducer = (state = {all: [], current:{}} , action) => {
@@ -44,6 +54,17 @@ const bookingsReducer = (state = {all: [], current:{}} , action) => {
         newState.all.push(action.newBooking)
         return newState
         }
+
+         case LOAD_BOOKINGS: {
+         const newState = {}
+         const totalBookings = []
+         action.bookings.totalBookings.forEach(booking=>{
+          totalBookings.push(booking)
+      })
+         newState.all=totalBookings
+         newState.current = {...state.current}
+         return newState
+    }
 
         default:
             return state
