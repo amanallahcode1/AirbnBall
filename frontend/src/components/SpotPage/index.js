@@ -13,6 +13,7 @@ import styled from 'styled-components';
 import { Modal } from '../Modal';
 
 function SpotPage() {
+
     const [showModal, setShowModal] = useState(false);
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
@@ -22,7 +23,8 @@ function SpotPage() {
     const spot = useSelector(state => state.spots.all[id-1]);
     const reviews = useSelector(state=> state.reviews.all)
     const bookings = useSelector(state => state.bookings.all)
-    console.log("4856846856", bookings)
+    const currentUserId = sessionUser.id
+    const currentSpotId = spot.id
     useEffect(() => {
         dispatch(spotActions.getOneSpot(id));
         dispatch(reviewActions.getReviews(id));
@@ -33,7 +35,13 @@ function SpotPage() {
      dispatch(reviewActions.deleteReview(id))   
     }
     const reserveCourt = id => {
-        dispatch(bookingActions.getBookings(id))
+        const newBooking = {
+          startDate:"03/06/2021",
+          endDate: "03/09/2021",
+          spotId: currentSpotId,
+          userId: currentUserId
+        }
+        dispatch(bookingActions.createNewBooking(newBooking))
     }
     const openModal = () => {
         setShowModal(prev => !prev)

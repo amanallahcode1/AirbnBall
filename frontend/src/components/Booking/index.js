@@ -12,12 +12,14 @@ function Booking({id}) {
       e.preventDefault()
       console.log("Hey")
       const newBooking = {
+        startDate:"03/06/2021",
+        endDate: "03/09/2021",
         spotId: 1,
         userId: 1
       }
     await dispatch(createNewBooking(newBooking))
      console.log("No")
-
+    
     }
   return (
     <div className='searchPage'>

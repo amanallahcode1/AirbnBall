@@ -8,10 +8,7 @@ const router = express.Router();
 
 router.get('/:id', asyncHandler(async(req, res)=>{
   const bookingSpot = await Booking.findAll({
-    where: {
-      userId: userId,
-      spotId: spotId
-    }
+    
   })
   console.log("h")
   return res.json(bookingSpot)

@@ -41,35 +41,33 @@ export const getBookings = (id) => async dispatch => {
 
 
 const bookingsReducer = (state = {all: [], current:{}} , action) => {
-    switch(action.type){
-        case CREATE_BOOKING: {
+        switch(action.type){
+          case LOAD_BOOKINGS: {
             const newState = {}
-            const totalBookings = []
+            const allBookings = []
+            action.bookings.forEach(booking=> {
+              allBookings.push(booking)
+            })
+            newState.all=allBookings
+            newState.current = {...state.current}
+            return newState
+          }
+          case CREATE_BOOKING: {
+            const newState = {}
+            const allBookings = []
             state.all.forEach(booking=>{
-            totalBookings.push(booking)
-    })
-    
-        newState.all=totalBookings
-        newState.current = {...state.current}
-        newState.all.push(action.newBooking)
-        return newState
-        }
-
-         case LOAD_BOOKINGS: {
-         const newState = {}
-         const totalBookings = []
-         action.bookings.totalBookings.forEach(booking=>{
-          totalBookings.push(booking)
-      })
-         newState.all=totalBookings
-         newState.current = {...state.current}
-         return newState
-    }
-
-        default:
+              allBookings.push(booking)
+            })
+            newState.all=allBookings
+            newState.current = {...state.current}
+            newState.all.push(action.booking)
+            return newState
+          }
+          default:
             return state
+        }
     }
 
-}
+
 
 export default bookingsReducer;
