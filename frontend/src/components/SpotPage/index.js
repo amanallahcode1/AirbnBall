@@ -23,11 +23,14 @@ function SpotPage() {
     const spot = useSelector(state => state.spots.all[id-1]);
     const reviews = useSelector(state=> state.reviews.all)
     const bookings = useSelector(state => state.bookings.all)
-    const currentUserId = sessionUser.id
-    const currentSpotId = spot.id
+    console.log(sessionUser.id)
+    // const currentUserId = sessionUser.id
+    // console.log(currentUserId)
+    // const currentSpotId = spot.id
     useEffect(() => {
         dispatch(spotActions.getOneSpot(id));
         dispatch(reviewActions.getReviews(id));
+        // Might be the issue for not seeing all reviews get set up immediately
        dispatch(bookingActions.getBookings(id))
     }, [dispatch, id])
 
@@ -40,8 +43,8 @@ function SpotPage() {
         const newBooking = {
           startDate:"03/06/2021",
           endDate: "03/09/2021",
-          spotId: currentSpotId,
-          userId: currentUserId
+          spotId: spot.id,
+          userId: sessionUser.id
         }
         dispatch(bookingActions.createNewBooking(newBooking))
         
@@ -75,9 +78,9 @@ function SpotPage() {
                     <div className="col-md-4">
                         <h2 id="reviewtext">Reviews</h2>
                         <button id="modal1" id="modal1" onClick={openModal}>Leave Review</button>
-                        <Link to={`/bookings`}>
-                            <button id="modal1" className="modal1" className="reserveButton" onClick={reserveCourt}>Reserve Court</button>
-                        </Link>
+                        <button id="modal1" className="modal1" className="reserveButton" onClick={reserveCourt}>Reserve Court
+                        </button>
+                        
                         <Modal showModal={showModal} setShowModal={setShowModal}/>    
                             {reviews.map(review => (
                                 <div class="card card-1">
