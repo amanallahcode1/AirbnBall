@@ -34,7 +34,9 @@ function SpotPage() {
     const deleteOneReview = (id) => {
      dispatch(reviewActions.deleteReview(id))   
     }
-    const reserveCourt = id => {
+    const reserveCourt = async e => {
+        e.preventDefault()
+       
         const newBooking = {
           startDate:"03/06/2021",
           endDate: "03/09/2021",
@@ -42,6 +44,7 @@ function SpotPage() {
           userId: currentUserId
         }
         dispatch(bookingActions.createNewBooking(newBooking))
+        
     }
     const openModal = () => {
         setShowModal(prev => !prev)
@@ -72,7 +75,9 @@ function SpotPage() {
                     <div className="col-md-4">
                         <h2 id="reviewtext">Reviews</h2>
                         <button id="modal1" id="modal1" onClick={openModal}>Leave Review</button>
-                        <button id="modal1" className="modal1" className="reserveButton" onClick={reserveCourt}>Reserve Court</button>
+                        <a href={`/bookings/`}>
+                            <button id="modal1" className="modal1" className="reserveButton" onClick={reserveCourt}>Reserve Court</button>
+                        </a>
                         <Modal showModal={showModal} setShowModal={setShowModal}/>    
                             {reviews.map(review => (
                                 <div class="card card-1">
