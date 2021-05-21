@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams, Redirect } from 'react-router-dom';
+import { useParams, Redirect, Link } from 'react-router-dom';
 import * as spotActions from '../../store/spots'
 import './SpotPage.css';
 import { NavLink } from 'react-router-dom';
@@ -75,9 +75,9 @@ function SpotPage() {
                     <div className="col-md-4">
                         <h2 id="reviewtext">Reviews</h2>
                         <button id="modal1" id="modal1" onClick={openModal}>Leave Review</button>
-                        <a href={`/bookings/`}>
+                        <Link to={`/bookings`}>
                             <button id="modal1" className="modal1" className="reserveButton" onClick={reserveCourt}>Reserve Court</button>
-                        </a>
+                        </Link>
                         <Modal showModal={showModal} setShowModal={setShowModal}/>    
                             {reviews.map(review => (
                                 <div class="card card-1">
