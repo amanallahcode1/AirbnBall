@@ -4,33 +4,48 @@ import { useDispatch, useSelector } from 'react-redux';
 import { createNewBooking } from '../../store/bookings'
 import BookingResult from '../BookingResult'
 import * as bookingActions from '../../store/bookings'
+import * as spotActions from '../../store/spots'
 import { useParams, Redirect, Link } from 'react-router-dom';
 import React, { useEffect } from 'react'
+
 function Booking() {
   const user = useSelector(state=> state.session.user)
   const dispatch = useDispatch()
   const { id } = useParams();
-  console.log(user.id)
+  const spots = useSelector(state => state.spots.all)
+  console.log(spots)
   const bookings = useSelector(state => state.bookings.all)
   console.log(bookings)
 
   useEffect(() => {
         dispatch(bookingActions.getBookings(user.id))
+        dispatch(spotActions.getSpots())
   }, [dispatch, user.id])
 
-  if (user) {
-        content = (
-              <div className='searchPage'>
-                    <div className='searchPage__info'>
-                          <h1 className='textsize'>Your Bookings</h1>
-                    </div>
-                    
-              </div>
-        )
-  }
+if (user) {
+      console.log(bookings)
+}
+// Let's think about the implementation
+// So, we want booking -> Spot Id
+// Take that spot id
+// Show it
+// Want it to be in booking result
+let spotDest;
   return (
-        <div>
+        <div className='searchPage'>
+            <div className='searchPage__info'>
+                  <h1 className='textsize'>Your Bookings</h1>
+            </div>
+            {bookings.map(booking => {
+                  spotDest = booking.spotId
+                  console.log(spots[spotDest].imgUrl1)
+                  // This is giving access to the booking spotDest
+                  // Need to unseed files and put 3 booking data instead of 18
+                  // All that needs to be done is add BookingResult component
+                  // With url, title, etc.
+                  // Implement Delete Booking Functionality
 
+            })}
         </div>
 //     <div className='searchPage'>
 //       <div className='searchPage__info'>
