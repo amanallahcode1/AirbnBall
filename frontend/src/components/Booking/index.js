@@ -3,15 +3,34 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createNewBooking } from '../../store/bookings'
 import BookingResult from '../BookingResult'
+import * as bookingActions from '../../store/bookings'
+import { useParams, Redirect, Link } from 'react-router-dom';
+import React, { useEffect } from 'react'
 function Booking() {
   const user = useSelector(state=> state.session.user)
   const dispatch = useDispatch()
   const { id } = useParams();
+  console.log(user.id)
+  const bookings = useSelector(state => state.bookings.all)
+  console.log(bookings)
 
+  useEffect(() => {
+        dispatch(bookingActions.getBookings(user.id))
+  }, [dispatch, user.id])
 
+  if (user) {
+        content = (
+              <div className='searchPage'>
+                    <div className='searchPage__info'>
+                          <h1 className='textsize'>Your Bookings</h1>
+                    </div>
+                    
+              </div>
+        )
+  }
   return (
         <div>
-              
+
         </div>
 //     <div className='searchPage'>
 //       <div className='searchPage__info'>
