@@ -22,7 +22,9 @@ function SpotPage() {
     const sessionUser = useSelector((state) => state.session.user);
     const spot = useSelector(state => state.spots.all[id-1]);
     const reviews = useSelector(state=> state.reviews.all)
+    console.log(reviews)
     const bookings = useSelector(state => state.bookings.all)
+    console.log(bookings)
     console.log(sessionUser.id)
     // const currentUserId = sessionUser.id
     // console.log(currentUserId)
@@ -88,6 +90,7 @@ function SpotPage() {
                                     <p value={review.review}>{review.review}</p>
                                 </div>
                             ))}
+                        
                            
                      
                     </div>
