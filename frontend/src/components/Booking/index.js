@@ -46,7 +46,7 @@ const deleteBooking = (id) => {
                   <div class="card card-1">
                         <h3 value={spots[booking.spotId].title}>{spots[booking.spotId].title}</h3>
                         <img id="bookingImage" value={spots[booking.spotId].imgUrl1} src={spots[booking.spotId].imgUrl1} />
-                        <button onClick={dispatch(bookingActions.deleteABooking)}>Delete Booking</button>
+                        <button onClick={deleteBooking}>Delete Booking</button>
                   </div>
             ))}
       </div>
