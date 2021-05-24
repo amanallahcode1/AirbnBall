@@ -29,6 +29,11 @@ router.post('/', asyncHandler(async (req, res) => {
     res.json({ booking })
 }));
 
+router.delete('/:id', asyncHandler(async(req, res)=> {
+  const booking = await Booking.findByPk(req.params.id)
+  await booking.destroy()
+  res.status(204).end()
+}))
 
 module.exports = router
 

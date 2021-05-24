@@ -76,6 +76,10 @@
   font-weight: 600;
 }
 
+#bookingImage {
+  position: relative;
+  top: 5px;
+}
 .card img {
   position: absolute;
   top: 20px;

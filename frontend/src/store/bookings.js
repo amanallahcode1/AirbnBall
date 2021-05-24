@@ -2,6 +2,7 @@ import { csrfFetch } from './csrf';
 
 const CREATE_BOOKING = 'bookings/CREATE_BOOKINGS'
 const LOAD_BOOKINGS = 'bookings/LOAD_BOOKINGS'
+const DELETE_BOOKING = 'bookings/DELETE_BOOKINGS'
 
 const createBooking = newBooking => ({
   type: CREATE_BOOKING,
@@ -10,6 +11,10 @@ const createBooking = newBooking => ({
 const loadBooking = bookings => ({
   type: LOAD_BOOKINGS,
   bookings
+})
+const deleteBooking = deletedBooking => ({
+  type: DELETE_BOOKING,
+  deletedBooking
 })
 
 export const createNewBooking = addedBooking => async dispatch => {
@@ -38,6 +43,14 @@ export const getBookings = (id) => async dispatch => {
   }
 }
 
+export const deleteABooking = (id) => async dispatch => {
+  const res = await csrfFetch(`/api/bookings/${id}`, {
+    method: "DELETE"
+  })
+  if (!res.ok) throw res;
+  dispatch(deleteBooking(id))
+}
+
 
 
 const bookingsReducer = (state = {all: [], current:{}} , action) => {
@@ -61,6 +74,13 @@ const bookingsReducer = (state = {all: [], current:{}} , action) => {
             newState.all=allBookings
             newState.current = {...state.current}
             newState.all.push(action.booking)
+            return newState
+          }
+          case DELETE_BOOKING: {
+            const newState = {}
+            newState.all = []
+            newState.current = {}
+            newState.all = state.all.filter(booking => booking.id !== action.bookingId)
             return newState
           }
           default:
