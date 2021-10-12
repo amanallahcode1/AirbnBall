@@ -37,7 +37,7 @@ BOOKING
  - Be able to reserve a court when logged in (LA)
  - User can see all their bookings
 
-## Check out more detais at the [wiki](https://github.com/amanallahcode1/AirbnBall/wiki)
+## Check out more details at the [wiki](https://github.com/amanallahcode1/AirbnBall/wiki)
 
 
 
