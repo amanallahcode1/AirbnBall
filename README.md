@@ -1,5 +1,4 @@
 # AirbnBall
-Airb
 ## Live Site: [AirbnBall](http://airbnball.herokuapp.com)
 
 #### AirbnBall, an AirBnB clone, is a single-page application that allows users to book and check out basketball courts in their area.
